@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.repairit">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Splash"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".AddVehicle"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateVehicle"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateProfile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Registration"
+            android:label="Registration"
+            android:parentActivityName=".LogIn"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateAppointment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddAppointment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateQuotation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddQuotation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Profile"
+            android:label="Your Profile"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Vehicle"
+            android:label="Vehicles"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Quotation"
+            android:label="Get Quotation"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Appointment"
+            android:label="Book Appointment"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContactUs"
+            android:label="Contact Us"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutUs"
+            android:label="About Us"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Home" />
+        <activity
+            android:name=".LogIn"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
