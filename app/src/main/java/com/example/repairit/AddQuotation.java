@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.annotation.SuppressLint;
+import android.app.Notification;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -29,6 +31,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Random;
+
 public class AddQuotation extends AppCompatActivity {
 
 
@@ -38,6 +42,7 @@ public class AddQuotation extends AppCompatActivity {
     private ImageView imageViewDamage;
     private EditText jobAppointed;
     private Button add, back;
+    NotificationHelper helper;
 
     StorageReference mStorageRef;
     DatabaseReference mDatabaseRef;
@@ -49,6 +54,7 @@ public class AddQuotation extends AppCompatActivity {
     private final String CHANNEL_ID = "personal_notifications";
     private final int NOTIFICATION_ID = 001;
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +90,8 @@ public class AddQuotation extends AppCompatActivity {
             }
         });
 
+        helper = new NotificationHelper(AddQuotation.this);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +117,9 @@ public class AddQuotation extends AppCompatActivity {
                         Toast.makeText(AddQuotation.this, "Upload is in progress", Toast.LENGTH_LONG).show();
 
                     quotationUploader();
+
+                    Notification.Builder builder = helper.getNotifcation("RepairIt ALERT", "Quotation will sent by SMS after evaluation");
+                    helper.getManager().notify(new Random().nextInt(), builder.build());
 
                 }
 
