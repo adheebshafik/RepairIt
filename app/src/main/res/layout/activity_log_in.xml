@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".LogIn">
+    tools:context=".LogIn"
+    android:orientation="vertical">
 
 
     <ImageView
+        android:layout_gravity="center"
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="150dp"
@@ -19,13 +21,15 @@
         app:srcCompat="@drawable/carlogo" />
 
     <EditText
-        android:id="@+id/editText"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:id="@+id/etEmailLogin"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_action_user"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:textSize="16dp"
         android:layout_marginBottom="35dp"
@@ -33,7 +37,9 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:layout_marginTop="-15dp"
+        android:layout_gravity="center"
+        android:id="@+id/etPasswordLogin"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:background="#11000000"
@@ -46,35 +52,21 @@
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        app:cardBackgroundColor="@color/colorAccent"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="10dp"
-        android:id="@+id/cardView"
-        android:layout_marginBottom="31dp"
-        android:layout_above="@+id/registerText"
-        android:layout_centerHorizontal="true">
 
-        <RelativeLayout
-            android:id="@+id/logInRl"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/loginText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Login"
-                android:textColor="#fff"
-                android:textSize="18sp" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_marginTop="-50dp"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapered"
+        android:text="LOGIN"
+        android:layout_marginBottom="60dp"/>
 
     <TextView
-        android:id="@+id/registerText"
+        android:layout_gravity="center"
+        android:id="@+id/registerLoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register Here."
@@ -84,6 +76,7 @@
         android:clickable="true"/>
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -112,4 +105,4 @@
             android:layout_marginLeft="15dp"
             app:srcCompat="@drawable/facebook" />
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

@@ -21,26 +21,11 @@
 
 
     <EditText
+        android:id="@+id/contactUsMessage"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="Phone"
-        android:inputType="phone" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:gravity="top"
         android:hint="Your Message"

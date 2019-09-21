@@ -16,7 +16,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="quotation_details">Quotation Details</string>
-    <string name="vehicleNo">Vehicle No</string>
+    <string name="vModel">Vehicle Model</string>
     <string name="jobAppointed">Job Appointed</string>
     <string name="damage">Damage Description</string>
     <string name="newQuoAddBtn">add</string>
@@ -48,7 +48,7 @@
     <string name="updateAppDate">Enter the date</string>
     <string name="appointmentNewBtn">add appointment</string>
     <string name="userProfileupdateBtn">update</string>
-    <string name="userProdileDeleteBtn">delete</string>
+    <string name="userProdfleDeleteBtn">delete account</string>
     <string name="userProfile">back</string>
     <string name="profileUpdateBtn">update details</string>
     <string name="YourVehicle">Your Vehicles</string>
@@ -68,4 +68,6 @@
     <string name="contact_posted">Your message has been successfully delivered.</string>
     <string name="aboutusname">Repair It</string>
     <string name="tcRepairIt">Terms and Conditions</string>
+    <string name="addquoModel">Vehicle Model</string>
+    <string name="addquocameraBtn">Choose Image</string>
 </resources>

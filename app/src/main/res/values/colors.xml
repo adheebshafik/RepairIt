@@ -2,10 +2,10 @@
 <resources>
         <color name="colorPrimary">#e74c3c</color>
     <color name="colorPrimaryDark">#c0392b</color>
-    <color name="backgroundcolor">#fcfcfc</color>
+    <color name="backgroundcolor">#FCFCFC</color>
     <color name="lightgray">#ededed</color>
     <color name="deeppurple">#7c4dff</color>
-    <color name="yellow">#ffb300</color>
+    <color name="yellow">#FFB300</color>
     <color name="green">#00bfa5</color>
     <color name="splashBackGround">#CA522D</color>
     <color name="colorAccent">#FF4081</color>

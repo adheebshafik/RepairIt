@@ -6,11 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class UpdateAppointment extends AppCompatActivity {
 
-    Button update, delete, back;
+    Button update, back;
+    EditText vNo, vModel, vJob, date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,56 +25,63 @@ public class UpdateAppointment extends AppCompatActivity {
         setContentView(R.layout.activity_update_appointment);
 
         update = findViewById(R.id.updateAppUpdateBtn);
-        delete = findViewById(R.id.updateAppDeleteBtn);
         back = findViewById(R.id.updateAppBackBtn);
+
+        vNo = findViewById(R.id.updateAppVehicleNo);
+        vModel = findViewById(R.id.updateAppVehicleText);
+        vJob = findViewById(R.id.updateAppJobText);
+        date = findViewById(R.id.updateAppDateText);
+
+        Intent intent = getIntent();
+        final String appId = intent.getStringExtra(Appointment.APPOINTMENT_ID);
+        String vcehNo = intent.getStringExtra(Appointment.VEHICLE_NO);
+        String vcehModel = intent.getStringExtra(Appointment.VEHICLE_MODEL);
+        String vchJob = intent.getStringExtra(Appointment.JOB);
+        String vchDate = intent.getStringExtra(Appointment.DATE);
+
+        vNo.setText(vcehNo);
+        vModel.setText(vcehModel);
+        vJob.setText(vchJob);
+        date.setText(vchDate);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(UpdateAppointment.this, Appointment.class);
-                startActivity(intent);
-                finish();
+                startActivity(new Intent(UpdateAppointment.this, Appointment.class));
             }
         });
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                displayToastMsg(view);
-                Intent intent = new Intent(UpdateAppointment.this, Appointment.class);
-                startActivity(intent);
-                finish();
+
+
+                updateAppointment(appId);
+
+
             }
         });
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                displayDeleteToastMsg(view);
-                Intent intent = new Intent(UpdateAppointment.this, Appointment.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 
-    public void toastMsg(String msg) {
+    private void updateAppointment(final String appId) {
 
-        Toast toast = Toast.makeText(UpdateAppointment.this, msg, Toast.LENGTH_SHORT);
-        toast.show();
 
-    }
+        String a = vNo.getText().toString();
+        String b = vModel.getText().toString();
+        String c = vJob.getText().toString();
+        String d = date.getText().toString();
 
-    public void displayToastMsg(View v) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String userId = user.getUid();
 
-        toastMsg("Update Successful");
-
-    }
-
-    public void displayDeleteToastMsg(View v) {
-
-        toastMsg("Successfully Deleted");
+        DatabaseReference appReference = FirebaseDatabase.getInstance().getReference("appointments").child(userId).child(appId);
+        AppointmentObject appointmentObject = new AppointmentObject(appId, a, b, c, d);
+        appReference.setValue(appointmentObject);
+        Toast.makeText(UpdateAppointment.this, "Update Successful", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(UpdateAppointment.this, Appointment.class));
+        finish();
 
     }
 

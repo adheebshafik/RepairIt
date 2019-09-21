@@ -10,16 +10,23 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
     private CardView profileCard, vehicleCard, quotationCard, appointmentCard;
     private MenuItem aboutus, contactus, share;
 
+    FirebaseAuth mfirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateAListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        mfirebaseAuth = FirebaseAuth.getInstance();
 
         profileCard = (CardView) findViewById(R.id.profile_card);
         vehicleCard = (CardView) findViewById(R.id.vehicle_card);
@@ -65,6 +72,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                                         startActivity(i);
                                         break;
 
+
             default:                    break;
         }
 
@@ -104,6 +112,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 return true;
 
             case R.id.action_logout:
+                FirebaseAuth.getInstance().signOut();
                 i = new Intent(this, LogIn.class);
                 this.startActivity(i);
                 return true;

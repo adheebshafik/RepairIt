@@ -1,131 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateQuotation"
-    >
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/loginText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/quotation_details"
-        android:textAlignment="center"
-        android:textColor="#F44336"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddQuotation"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/vehicleNo"
-        android:inputType="textPersonName"
-        android:text="WP 1551"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginText" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="282dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/quotation_details"
+            android:textAlignment="center"
+            android:textColor="#F44336"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/jobAppointed"
-        android:inputType="textPersonName"
-        android:text="Paint"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/damage"
-        android:inputType="textPersonName"
-        android:text="Rear Bumper"
-        app:layout_constraintBottom_toTopOf="@+id/vModelSpinner2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <Spinner
-        android:id="@+id/vModelSpinner2"
-        android:layout_width="219dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/quoDetailsUpdateBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
-
-    <Button
-        android:id="@+id/quoDetailsUpdateBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="displayToastMsg"
-        android:text="@string/quoDetailsUpdate"
-        app:layout_constraintBottom_toTopOf="@+id/quoDetailsDeleteBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vModelSpinner2"
-        android:background="@drawable/shape"/>
-
-    <Button
-        android:id="@+id/quoDetailsDeleteBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="displayDeleteToastMsg"
-        android:text="@string/quoDetailsDelete"
-        app:layout_constraintBottom_toTopOf="@+id/quoDetailsBackBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoDetailsUpdateBtn"
-        android:background="@drawable/shapered"/>
-
-    <Button
-        android:id="@+id/quoDetailsBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/newQuoBackBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoDetailsDeleteBtn"
-        android:background="@drawable/shape"/>
+        <EditText
+            android:id="@+id/editQuoVNoET"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:entries="@array/vehicleList"
+            android:hint="Vehicle No"
+            android:inputType="text" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/editQuotationVModelET"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/vModel"
+            android:inputType="textPersonName"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:id="@+id/linearLayoutedit"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/editchooseFileAddQuotation"
+                android:layout_width="134dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="0dp"
+                android:text="@string/addquocameraBtn" />
+
+            <ImageView
+                android:background="@drawable/ic_image_black_24dp"
+                android:id="@+id/imageView8edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp" />
+
+
+        </LinearLayout>
+
+
+        <EditText
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:id="@+id/editQuojobAppointedET"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/jobAppointed"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/editQuoAddBtn"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:onClick="displayToastMsg"
+            android:text="@string/UpadateAppointmentUpdateBtn"
+            app:layout_constraintTop_toBottomOf="@+id/addQuojobAppointedET" />
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/editQuoBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:text="@string/newQuoBackBtn" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>
