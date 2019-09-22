@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "660298137596",
+    "firebase_url": "https://repairit-bfc37.firebaseio.com",
+    "project_id": "repairit-bfc37",
+    "storage_bucket": "repairit-bfc37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660298137596:android:b701d8e65da1c71c",
+        "android_client_info": {
+          "package_name": "com.example.repairit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660298137596-s0psn8nl4d8br4k52aki64tuv48so2a8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.repairit",
+            "certificate_hash": "aa8192f430aaa47d5a3c2b8ed29069ebcc3c53d9"
+          }
+        },
+        {
+          "client_id": "660298137596-tudv3l0t6oe218ks7gbsnvm976i39ued.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGMxOv04gvVu9gL4kLN6WsTD9HURisj4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660298137596-tudv3l0t6oe218ks7gbsnvm976i39ued.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
