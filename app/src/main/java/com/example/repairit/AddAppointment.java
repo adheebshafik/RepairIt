@@ -83,6 +83,7 @@ public class AddAppointment extends AppCompatActivity {
         else if(vehicleModel.isEmpty())
             vModel.setError("Enter Model");
         else if(vehicleJob.isEmpty())
+
             job.setError("Enter Job");
         else if(vehicleAppDate.isEmpty())
             date.setError("Enter Date");
