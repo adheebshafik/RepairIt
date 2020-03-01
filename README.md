@@ -1,3 +1,2 @@
 # RepairIt
-MADD Year 2 Sem 2
-Mobile Application Development and Design
+A Mobile Application Development and Design Project
